@@ -1,0 +1,50 @@
+<!--
+1.)check if the number is even or odd
+2.)check if the year is leap year or not
+3.)calculate  the result of student where:
+    if marks are less than 50 print fail
+    if m>50 pass
+    if m>60 grade c
+    if m>70 grade b
+    if m>80 grade a
+    if m>90 grade o
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a=2;
+        // if(a%2==0){console.log("even")}
+        // else{console.log("even")}
+
+        // let a=2026;
+        // if(a%4==0 && a%100==0){console.log("leap")}
+        // else{console.log("not leap")}
+            let marks = 70;
+
+            if (marks < 50) {console.log("You are failed");}
+            else {console.log("You are passed");
+
+                if (marks <= 60) {
+        console.log("Grade D (or just passed)");
+    } else if (marks <= 70) {
+        console.log("Grade C");
+    } else if (marks <= 80) {
+        console.log("Grade B");
+    } else if (marks <= 90) {
+        console.log("Grade A");
+    } else if (marks <= 100) {
+        console.log("Grade O");
+    } else {
+        console.log("Invalid marks");
+    }
+}
+    </script>
+</body>
+</html>

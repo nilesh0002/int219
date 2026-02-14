@@ -1,0 +1,36 @@
+<!--
+event - onclick ,inclick
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="slider" src="/unit1/image/bg2.jpg" width="70%" height="60%">
+    <br>
+    <br>
+    <button onclick="prev()">previous</button>
+    <button onclick="next()">Next</button>
+
+    <script>
+        let images=["/unit1/image/w15.jpg","/unit1/image/w15.jpg","/unit1/image/w16.jpg"]
+        let index=0;
+
+        function showimage(){
+            document.getElementById("slider").src=images[index]
+        }
+        function next(){
+            index=(index+1)%images.length
+            showimage()
+        }
+        function prev(){
+            index=(index-1 + images.length)%images.length
+            showimage()
+        }
+    </script>
+</body>
+</html>

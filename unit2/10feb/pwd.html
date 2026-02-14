@@ -1,0 +1,27 @@
+<!--
+onclick - event - dynamic
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWD</title>
+</head>
+<body>
+    <input type="password" id="password" placeholder="ENTER YOUR PASSWORD">
+    <button onclick="togglepassword()">SHOW</button>
+
+    <script>
+        function togglepassword(){
+            let pass=document.getElementById("password")
+            if(pass.type === "password" ){
+                pass.type="text"
+            }else{
+                pass.type="password"
+            }
+        }
+    </script>
+</body>
+</html>

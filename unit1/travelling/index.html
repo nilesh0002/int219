@@ -1,0 +1,112 @@
+
+<!--
+
+CREATE A WEB PAGE FOR TOURIST
+to contact you and book a trip from 
+your company
+1.) header- name of organization(css- bg color(blue),font color-white)
+2.) A div - book us now(same width as webpage) 
+3.) Create a grid to show images of different palces that user can visited
+4.) Create a contact us form(NAME,CONTACT US,EMAIL,SUMIT BUTTON)
+    form should be a center
+5.) footer - (bg-black,text-white,social media link of company)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELLING</title>
+</head>
+<style>
+header{
+    background-color: rgb(3, 3, 74) ;
+    color: white;
+    text-align: center;
+}
+.d1{
+    border: 2px solid rgb(154, 100, 100);
+    text-align: center;
+    background: #cb6767;
+
+}
+.places{
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 10px;
+    text-align:center;
+    gap: 40px;
+
+}
+#form{
+    border: 1px solid black;
+    width:300px;
+    height:200px;
+    padding-left: 10px;
+    margin:auto;
+    background: #dedec2;
+}
+footer{
+    background: #000;
+    color: aliceblue;
+}
+a{
+    color: white;
+}
+#a1{
+    text-align: center;
+    background: brown;
+    color: azure;
+    margin-left: -10px;
+}
+#s{
+    color: white;
+    background-color: rgb(136, 42, 42);
+    border: rgb(245, 239, 239);
+}
+body{
+    background:rgb(227, 208, 183);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+</style>
+<body>
+    <header>
+        <h1>TRAVELLING WEBSITE</h1>
+    </header>
+    <section class="abc">
+      <div class="d1">
+        book us now
+    </div>
+
+    <div class="places">
+            <img src="/image/w15.jpg" height="250px" weight="300px";>
+            <img src="/image/w16.jpg" height="250px" weight="300px";>
+            <img src="/image/w19.jpg" height="250px" weight="300px";>
+            <img src="/image/w7.jpg" height="250px" weight="300px";>
+            <img src="/image/w2.jpg" height="250px" weight="300px";>
+            <img src="/image/w5.jpg" height="250px" weight="300px";>
+    </div>
+    <div id="form">
+        <p id="a1">CONTACT US</p>
+        <form>
+        <label>Name</label>
+        <input type="text" name="name"><br><br>
+        <label>Contact no.</label>
+        <input type="text" name="txt"><br><br>
+        <label>Email</label>
+        <input type="text" name="email"><br><br>
+        <input id="s" type="submit" value="submit">
+
+        </form>
+    </div>
+
+    </section>
+<footer>
+    <p>Follow us on: <a href="https://www.youtube.com/"> You Tube...</a></p>
+    <p>our website:<a href="https://www.youtube.com/"> You Tube...</a>
+    </p>
+</footer>
+
+
+</body>
+</html>

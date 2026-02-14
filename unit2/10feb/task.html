@@ -1,0 +1,201 @@
+<!--
+create a webpage for a restaurant
+1.) header with name of restaurant
+2.) set an image as background for webpage
+3.) set a slide show of 4 top dishes served
+4.) create 2 cards- each should have image of dish, name of dish and order button
+when user click on order ,below the card is should display "1 dish added for order"
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spice Heaven Restaurant</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+            url('/unit1/image/rest.jpg') no-repeat;
+            background-size: cover;
+}
+
+
+        
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            width: 90%;
+            height: 420px;
+            margin: 40px auto;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .menu-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: rgba(255,255,255,0.95);
+            width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #c0392b;
+        }
+
+        .card button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .card button:hover {
+            background-color: #c0392b;
+        }
+
+        .message {
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+            min-height: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Spice Heaven</h1>
+        <p>Authentic Indian Cuisine</p>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides">
+            <img src="/unit1/image/briyani.jpg" alt="Biryani">
+        </div>
+
+        <div class="mySlides">
+            <img src="/unit1/image/chicken.jpg" alt="Butter Chicken">
+        </div>
+
+        <div class="mySlides">
+            <img src="/unit1/image/paneertika.jpg" alt="Paneer Tikka">
+        </div>
+        <div class="mySlides">
+            <img src="/unit1/image/naan.webp" alt="Naan">
+        </div>
+    </div>
+
+
+    <div class="menu-section">
+
+        <div class="card">
+            <img src="/unit1/image/chicken.jpg" alt="Butter Chicken">
+            <h3>Butter Chicken</h3>
+            <button onclick="addToOrder(this)">Order Now</button>
+            <div class="message"></div>
+        </div>
+
+        <div class="card">
+            <img src="/unit1/image/briyani.jpg" alt="Chicken Biryani">
+            <h3>Chicken Biryani</h3>
+            <button onclick="addToOrder(this)">Order Now</button>
+            <div class="message"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        2025 Spice Heaven Restaurant
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        function addToOrder(button) {
+            alert("item added")
+
+            setTimeout(() => {
+                messageBox.innerHTML = "";
+            }, 4000);
+        }
+    </script>
+
+</body>
+</html>

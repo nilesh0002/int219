@@ -1,0 +1,89 @@
+<!--
+TASk:
+create a regis form and use these event
+1.)when the user is filling the name,the same name should be display in a para--
+2.)when user keep the mouse on submit button,it should change its color
+3.)when user click on the button from submit,its text should change to submmiited.
+4.)create div and add image also when y click on hide it will hide and when click show it will show
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #d1{
+        border: solid 3px black;
+        width: 50%;
+    }
+    #btn{
+        text-align: center;
+        color: rgb(247, 244, 244);
+        
+        background: #000;
+    }
+    #regi{
+        height: 20px;
+        width: 20%;
+    }
+</style>
+<body>
+     <form id="r1">
+        <label>Name :</label>
+        <input type="text" id="tin" name="name"><br><br>
+        <input id="regi" type="submit" value="Register">
+        <p>key pressed : <span id="tout">  </span></p>
+    </form>
+    <div id="d1">
+        <img id="img" src="/unit1/image/w16.jpg" height="50%" width="100%"><br><br>
+        <button id="btn">hide or show</button>
+    </div>
+
+      <script>
+
+        //output print
+        const input=document.getElementById("tin");
+        const output=document.getElementById("tout");
+
+        input.addEventListener("input",function(){
+            output.textContent=input.value || "";
+        })
+
+        //toggle efect
+        const btn=document.getElementById("btn")
+        const image=document.getElementById("img")
+
+        btn.onclick=function(){
+            if(image.style.display==="none"){
+                image.style.display="block"
+                btn.innerText="Hide image"
+            }else{
+                image.style.display="none"
+                btn.innerText="Show Image"
+            }
+        }
+
+        //mouse hover color change
+        const reg=document.getElementById("regi")
+
+        reg.onmouseover=function(){
+            reg.style.backgroundColor="red";
+            reg.style.color="white";
+        }
+        reg.onmouseout=function(){
+            reg.style.backgroundColor = "white";
+            reg.style.color = "black";
+        }
+
+        //onclick registered
+        document.getElementById("r1").addEventListener("submit",function(e){
+            e.preventDefault();
+            document.getElementById("regi").value="Submitted!"
+        })
+    </script>
+</body>
+</html>

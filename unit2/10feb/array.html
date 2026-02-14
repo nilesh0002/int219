@@ -1,0 +1,32 @@
+<!--
+.source help us to what is the source of imag goin to be displayed
+if fun1 acting as arcument for fun2 then it called call back fun
+setinterval- seting up an interval
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDE SHOW</title>
+</head>
+<body style="margin: 0;">
+    <img id="slide" width="70%" height="50%">
+    <script>
+        let images=[ //array and storing images.
+            "/unit1/image/w15.jpg",
+            "/unit1/image/w2.jpg",
+            "/unit1/image/w5.jpg"
+        ]
+        let index=0;
+        function changeimage(){
+            document.getElementById("slide").src=images[index]
+            index=(index+1)%images.length
+        }
+        setInterval(changeimage,2000)
+
+    
+    </script>
+</body>
+</html>

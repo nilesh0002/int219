@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style>
+    #clock{
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+</style>
+<body>
+    <h2 id="clock"></h2>
+    <script>
+        function updateclock(){
+            let now=new Date()
+            let timeString=now.toLocaleTimeString()
+            document.getElementById("clock").innerHTML=timeString
+        }
+        updateclock() 
+        setInterval(updateclock,1000)
+        function updatedate(){
+            let now=new Date()
+            let dateString=now.toLocaleDateString()
+            document.getElementById("clock").innerHTML=dateString
+        }
+        updatedate() 
+        setInterval(updatedate,1000)  
+        
+    </script>
+</body>
+</html>

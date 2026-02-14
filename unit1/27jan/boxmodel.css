@@ -1,0 +1,55 @@
+
+/*
+size division for larger = start from 100px
+<div> --is a generic HTML block element with no default styling or special meaning.
+Container --is usually a <div>with a specific CSS class (.container)
+            that applies centering + max-width styles
+
+grid - CSS Grid is a two-dimensional layout system that lets you create
+       rows and columns at the same time using
+*/
+
+
+
+/*
+changes:-
+1.)complete foooter
+2.)add body css->bg color
+3.)all font of webpage t.roman
+*/
+
+
+.header{
+    background-color: aliceblue;
+    border: 3px solid blue;
+    margin-bottom: 20px;
+}
+.header-container{
+    padding: 20px;
+    text-align: center;
+}
+.content{
+    padding:20px;
+}
+.section{
+    margin: 20px;
+}
+.card{
+    width: 300px;
+    padding: 16px;
+    border: 1px solid red;
+    margin: auto;
+    background-color: bisque;
+}
+.footer{
+    background-color: azure;
+    border-top: 3px solid;
+    border-color: blue;
+    padding: 2px;
+    text-align: center;
+
+}
+.body{
+    background: rgb(212, 228, 180);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,41 @@
+
+<!-- TASK
+take input form user
+marks obtained  total marks 
+1.) 10th marks 
+2.) 12th marks
+logica od calculating the precentage - show the precentage in the form of paragraph -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERCENTAGE CALCULATOR</title>
+</head>
+<body>
+    <input type="text" id="t1" placeholder="enter total marks in 10th">
+    <input type="text" id="o1" placeholder="enter obtained marks out of total">
+    <button id="b1"  onclick="cal()">precentage</button><br><br>
+
+    <input type="text" id="t2" placeholder="enter total marks in 12th">
+    <input type="text" id="o2" placeholder="enter obtained marks out of total">
+    <button id="b2" onclick="cal()">precentage</button>
+
+    <script>
+        function cal(){
+            t1=Number(document.getElementById('t1').value)
+            o1=Number(document.getElementById('o1').value)
+            t2=Number(document.getElementById('t2').value)
+            o2=Number(document.getElementById('o2').value)
+            value1=(o1*100)/t1;
+            value2=(o2*100)/t2;
+            document.getElementById('b1').innerText="The percentage  is : "+value1
+            document.getElementById('b2').innerText="The percentage is : "+value2
+        }
+    </script>
+
+
+    
+</body>
+</html>

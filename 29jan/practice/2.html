@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #4c4a4a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgb(0, 0, 0);
+            color: white;
+            text-align: center;
+    
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        nav {
+            background: #4c4a4a;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 1rem;
+            transition: color 0.3s;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2.5rem 1rem;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .gallery img {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            border: 4px solid #000000;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+        }
+
+        .main-wrapper {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem ;
+        }
+
+        .layout {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            flex: 3;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2rem;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+
+        .sidebar {
+            
+            background:rgba(255, 255, 255, 0.25);
+            padding: 2rem;
+            border-radius: 10px;
+            min-width: 280px;
+        }
+
+        img:not(.gallery img) {
+            width: 50%;
+            height: auto;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .contact {
+            text-align: center;
+            background:rgba(255, 255, 255, 0.25);
+            padding: 2.5rem;
+            margin: 2.5rem;
+            border-radius: 10px;
+            justify-content: center;
+            
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 0.9rem;
+            border: 2px solid #5e5757;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+        }
+
+        button {
+            padding: 1rem;
+            color:white;
+            background: #222;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        footer {
+            background: rgb(0, 0, 0);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Practice Page</h1>
+        <p>this is paragraph page</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="gallery">
+        <img src="/image/w19.jpg" alt="Image 1">
+        <img src="/image/w19.jpg" alt="Image 2">
+        <img src="/image/w19.jpg" alt="Image 3">
+    </div>
+
+    <div class="main-wrapper">
+        <div class="layout">
+            <div class="content">
+                <h2>Main Content</h2>
+                <p>This is practice page. This div includes main content of webpage.</p>
+                <img src="/image/w2.jpg" alt="Main content image">
+            </div>
+
+            <div class="sidebar">
+                <h3>Sidebar</h3>
+                <p>This is sidebar area. You can put extra information, links, recent updates, etc. here.</p>
+            </div>
+        </div>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone (optional)">
+                <textarea rows="6" placeholder="Your Message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 — A Practice Webpage Design</p>
+    </footer>
+
+</body>
+</html>
+
+
+<!-- 
+header-text white bg blacl
+<nav>addm open
+h1
+flex include 3 iamge
+contact form
+foooter-text white bg black
+-->
