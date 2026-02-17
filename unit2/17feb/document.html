@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bankAccount(acthld){
+            var bal=1000;
+
+            function dep(amt){
+                bal=bal+amt
+                console.log(acthld+"dep"+amt)
+                console.log("new balance : ",bal)
+            }
+
+            function wdr(amt){
+                bal=bal-amt
+                console.log(acthld + "withdraw" + amt)
+                console.log("Remaining balance : ", bal)
+            }
+            dep(500)
+            wdr(200)
+        }
+        bankAccount("nil")
+    </script>
+</body>
+</html>
