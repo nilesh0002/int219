@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+</head>
+    <style>
+        body{
+            display: flex;
+            align-items: center ;
+            justify-content:center;
+            height: 100vh;
+            background-color: bisque;
+        }
+        .second{
+            width: 150px;
+            height: 150px;
+            /* background: peru; */
+            background: linear-gradient(to right,red, orange);
+            border-radius: 10px;
+            transition: transform 1s,box-shadow 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .second:hover{
+            transform: scale(1.5);
+            box-shadow:0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+    </style>
+<body>
+    <div class="second">hover</div>
+</body>
+</html>
+
+<!--
+linear-gradient() → creates smooth transition between colors in a direction.
+radial-gradient() → creates circular gradient from center outward.
+-->
