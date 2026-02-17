@@ -1,0 +1,70 @@
+<!--
+create a prompt,popup box, question should be-enter your name,when user will
+entr name,a wwlcome message  should be displayes on the webpage in a div
+apply animation on that div
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: wheat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #welcome {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #b71c1c;
+      padding: 40px 60px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      min-width: 450px;
+      
+      animation: pulse 2.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    #welcome span {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcome"></div>
+
+  <script>
+    let name = prompt("Enter your name:");
+    let text = name && name.trim() ? `Welcome, ${name.trim()}` : "Hello visitor";
+
+    let html = "";
+    for (let i = 0; i < text.length; i++) {
+      let char = text[i] === " " ? "&nbsp;" : text[i];
+      html += `<span>${char}</span>`;
+    }
+
+    document.getElementById("welcome").innerHTML = html;
+  </script>
+
+</body>
+</html>
