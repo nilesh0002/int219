@@ -7,64 +7,63 @@ apply animation on that div
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: wheat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Animation</title>
+
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: wheat;
+        font-family: Arial, sans-serif;
     }
 
-    #welcome {
-      font-size: 2.8rem;
-      font-weight: bold;
-      color: #b71c1c;
-      padding: 40px 60px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      min-width: 450px;
-      
-      animation: pulse 2.2s infinite ease-in-out;
+    .box{
+        padding: 30px 50px;
+        background: green;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 12px;
+        animation: pulse 1.5s infinite ease-in-out;
+        display: none; /* hidden initially */
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.12);
-      }
+    @keyframes pulse{
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.3);
+        }
+        100%{
+            transform: scale(1);
+        }
     }
-
-    #welcome span {
-      display: flex;
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <div id="welcome"></div>
+<div id="welcomeBox" class="box"></div>
 
-  <script>
+<script>
     let name = prompt("Enter your name:");
-    let text = name && name.trim() ? `Welcome, ${name.trim()}` : "Hello visitor";
 
-    let html = "";
-    for (let i = 0; i < text.length; i++) {
-      let char = text[i] === " " ? "&nbsp;" : text[i];
-      html += `<span>${char}</span>`;
+    let box = document.getElementById("welcomeBox");
+
+    if(name && name.trim() !== ""){
+        box.textContent = "Welcome, " + name.trim();
+    } else {
+        box.textContent = "Welcome, Guest";
     }
 
-    document.getElementById("welcome").innerHTML = html;
-  </script>
+    box.style.display = "block";
+</script>
 
 </body>
 </html>
