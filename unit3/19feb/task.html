@@ -1,0 +1,34 @@
+<!--
+create 2 different fun and perform arthimatic operations(only 2)
+on the same by passing arrays in function
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Spread with Arithmetic Operations</title>
+</head>
+<body>
+
+<script>
+    function addNumbers(a, b, c, d) {
+        return a + b + c + d;
+    }
+    function multiplyNumbers(x, y, z) {
+        return x * y * z;
+    }
+
+    const numbers1 = [10, 20, 30, 40];
+    const numbers2 = [5, 6, 7];
+
+    console.log("Addition result:", addNumbers(...numbers1));     
+    console.log("Multiplication result:", multiplyNumbers(...numbers2));  
+
+    const moreNumbers = [...numbers2, 8];
+    console.log("Multiplication with extra number:", multiplyNumbers(...moreNumbers));  
+</script>
+
+</body>
+</html>

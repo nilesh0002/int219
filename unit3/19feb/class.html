@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Default</title>
+</head>
+<body>
+    <script>
+        class student{
+            constructor(name,age,course="cse"){
+                this.name=name
+                this.age=age
+                this.course=course
+               
+            }
+            displayinfo(){
+                console.log("Name : ",this.name)
+                console.log("Age : ",this.age)
+                console.log("Course : ",this.course)
+            }
+        }
+        const s1=new student("nil",21)
+        s1.displayinfo()  
+
+    </script>
+    
+</body>
+</html>
+

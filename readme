@@ -1,0 +1,21 @@
+/*
+
+10 march--(ca):-
+15 marks - written
+same written on code + viva 
+5 marks for output 
+
+19feb..
+class and objects:-
+construtor:-
+rest parameter:-
+
+...numbers called as spread operator
+num as key value value it will change.
+numbers is an array
+num=>rest parameter is used to store the remaining parameters in an array
+
+let and const:- we can reassign the value of let but we cannot reassign the value of const
+but we can change the value of const but we cannot reassign the value of const
+*/
+
