@@ -17,5 +17,23 @@ num=>rest parameter is used to store the remaining parameters in an array
 
 let and const:- we can reassign the value of let but we cannot reassign the value of const
 but we can change the value of const but we cannot reassign the value of const
+
+syncronous and asyncronous:-
+syncronous:- it will execute the code line by line,it will wait for the previous code to execute before executing the next code
+asyncronous:- it will execute the code in any order,it will not wait for the previous code to execute
+promise:- it is used to handle asyncronous code
+it has three states:- loading, fulfilled, rejected
+
+loading:- it is the initial state of the promise
+fulfilled:- it is the state when the promise is resolved successfully
+rejected:- it is the state when the promise is rejected
+await:- it is used to wait for the promise to be resolved,
+it give 1st preference to the promise to be resolved before executing the next code
+
+fetch:- it is used to make an API call
+
+settimeout:- it is used to execute a function after a certain time
+setinterval:- it is used to execute a function repeatedly after a certain time
+defer:- it is used to execute a function after the HTML document is completely loaded
 */
 

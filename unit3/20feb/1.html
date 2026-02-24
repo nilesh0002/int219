@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Runtime Analyzer</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { font-size: 1.25rem; }
+        .status { padding: 0.75rem; border-radius: 6px; margin: 1rem 0; }
+        .status.pending { background: #fef3c7; color: #92400e; }
+        .status.running { background: #dbeafe; color: #1e40af; }
+        .status.done { background: #d1fae5; color: #065f46; }
+        .status.error { background: #fee2e2; color: #991b1b; }
+        button { padding: 0.5rem 1rem; cursor: pointer; }
+        input[type="file"] { margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+    <h1>Runtime Analyzer</h1>
+    <p>Load the obfuscated script and run it with interception. Open console (F12) for results.</p>
+
+    <div id="status" class="status pending">Choose a .txt file with obfuscated code, or use default (12409399.txt in same folder).</div>
+
+    <div>
+        <label>
+            <input type="file" id="fileInput" accept=".txt" />
+            Load script from file
+        </label>
+    </div>
+    <p>— or —</p>
+    <button type="button" id="btnFetch">Load 12409399.txt from same folder</button>
+
+    <script>
+        (function() {
+            const statusEl = document.getElementById('status');
+            const fileInput = document.getElementById('fileInput');
+            const btnFetch = document.getElementById('btnFetch');
+
+            function setStatus(msg, className) {
+                statusEl.textContent = msg;
+                statusEl.className = 'status ' + (className || 'pending');
+            }
+
+            function runWithInterception(obfuscatedCode) {
+                const intercepted = {
+                    strings: [],
+                    numbers: [],
+                    domOperations: [],
+                    networkRequests: [],
+                    registrationFoundIn: []  // e.g. { where: 'fetch', url: '12409399.txt' }
+                };
+
+                const originalLog = console.log;
+                const originalError = console.error;
+                console.log = function(...args) {
+                    const str = args.join(' ');
+                    intercepted.strings.push(str);
+                    if (/12409399|12410147/.test(str)) {
+                        originalLog('🔍 FOUND REGISTRATION IN CONSOLE:', str);
+                    }
+                    originalLog.apply(console, args);
+                };
+                console.error = function(...args) {
+                    const str = args.join(' ');
+                    intercepted.strings.push(str);
+                    if (/12409399|12410147/.test(str)) {
+                        originalError('🔍 FOUND REGISTRATION IN ERROR:', str);
+                    }
+                    originalError.apply(console, args);
+                };
+
+                const originalCreateElement = document.createElement;
+                document.createElement = function(tagName) {
+                    intercepted.domOperations.push('createElement(' + tagName + ')');
+                    return originalCreateElement.call(document, tagName);
+                };
+
+                const originalSetItem = Storage.prototype.setItem;
+                Storage.prototype.setItem = function(key, value) {
+                    if (/12409399|12410147/.test(key) || /12409399|12410147/.test(value)) {
+                        originalLog('🔍 FOUND REGISTRATION IN localStorage:', key, value);
+                    }
+                    return originalSetItem.call(this, key, value);
+                };
+                const originalGetItem = Storage.prototype.getItem;
+                Storage.prototype.getItem = function(key) {
+                    const value = originalGetItem.call(this, key);
+                    if (/12409399|12410147/.test(key) || /12409399|12410147/.test(value)) {
+                        originalLog('🔍 FOUND REGISTRATION IN localStorage GET:', key, value);
+                    }
+                    return value;
+                };
+
+                const originalAssign = window.location.assign;
+                window.location.assign = function(url) {
+                    if (/12409399|12410147/.test(url)) {
+                        originalLog('🔍 FOUND REGISTRATION IN URL:', url);
+                    }
+                    return originalAssign.call(window.location, url);
+                };
+
+                const originalFetch = window.fetch;
+                window.fetch = function(url, options) {
+                    const urlStr = String(url);
+                    const method = (options && options.method) || 'GET';
+                    const hasReg = /12409399|12410147/.test(urlStr);
+                    
+                    if (hasReg) {
+                        intercepted.registrationFoundIn.push({ where: 'fetch URL', value: urlStr, method: method });
+                        originalLog('🔍 FOUND REGISTRATION IN FETCH URL:', urlStr);
+                        originalLog('   Method:', method);
+                        if (options && options.headers) {
+                            originalLog('   Headers:', JSON.stringify(options.headers));
+                        }
+                    }
+                    
+                    if (options && options.body) {
+                        const bodyStr = String(options.body);
+                        if (/12409399|12410147/.test(bodyStr)) {
+                            originalLog('🔍 FOUND REGISTRATION IN FETCH BODY:', bodyStr);
+                        }
+                    }
+                    
+                    // Log all fetch calls for debugging
+                    originalLog('📡 Fetch call:', method, urlStr);
+                    
+                    // Intercept the response to see what it's trying to get
+                    return originalFetch.apply(window, arguments)
+                        .then(function(response) {
+                            if (hasReg) {
+                                originalLog('   Response status:', response.status, response.statusText);
+                                originalLog('   Response URL:', response.url);
+                            }
+                            return response;
+                        })
+                        .catch(function(error) {
+                            if (hasReg) {
+                                originalLog('   Fetch error:', error.message);
+                            }
+                            throw error;
+                        });
+                };
+
+                const originalToString = String.prototype.toString;
+                String.prototype.toString = function() {
+                    const str = originalToString.call(this);
+                    if (/12409399|12410147/.test(str) && str.length < 100) {
+                        originalLog('🔍 FOUND REGISTRATION IN STRING:', str);
+                    }
+                    return str;
+                };
+
+                const originalDefineProperty = Object.defineProperty;
+                Object.defineProperty = function(obj, prop, desc) {
+                    const valStr = String(desc.value || '');
+                    if (/12409399|12410147/.test(valStr)) {
+                        originalLog('🔍 FOUND REGISTRATION IN defineProperty(' + String(prop) + '):', valStr);
+                    }
+                    return originalDefineProperty.call(Object, obj, prop, desc);
+                };
+
+                try {
+                    setStatus('Executing obfuscated code...', 'running');
+                    console.log('Executing obfuscated code...');
+                    eval(obfuscatedCode);
+                    console.log('Execution completed');
+                } catch (error) {
+                    console.error('Execution error:', error.message);
+                    if (/12409399|12410147/.test(error.message)) {
+                        originalLog('🔍 FOUND REGISTRATION IN ERROR:', error.message);
+                    }
+                    setStatus('Execution error: ' + error.message, 'error');
+                    return;
+                }
+
+                setTimeout(function() {
+                    console.log('\n=== Analysis Results ===');
+                    console.log('Intercepted strings:', intercepted.strings.length);
+                    console.log('DOM operations:', intercepted.domOperations.length);
+                    var foundInStrings = intercepted.strings.some(function(s) { return /12409399|12410147/.test(s); });
+                    var foundInFetch = intercepted.registrationFoundIn.length > 0;
+                    if (foundInFetch) {
+                        console.log('\n✅ Registration number FOUND at runtime:');
+                        intercepted.registrationFoundIn.forEach(function(item) {
+                            console.log('   - ' + item.where + ':', item.value, item.method ? '(' + item.method + ')' : '');
+                        });
+                    }
+                    if (!foundInStrings && !foundInFetch) {
+                        console.log('\n❌ Registration number NOT found in runtime interception');
+                        console.log('Check browser console for any 🔍 markers');
+                    }
+                    setStatus(foundInFetch ? 'Done. Registration found in fetch URL. See console.' : 'Done. Check console (F12) for results.', 'done');
+                }, 2500);
+            }
+
+            fileInput.addEventListener('change', function() {
+                const file = fileInput.files[0];
+                if (!file) return;
+                setStatus('Reading ' + file.name + '...', 'running');
+                const reader = new FileReader();
+                reader.onload = function() {
+                    runWithInterception(reader.result);
+                };
+                reader.onerror = function() {
+                    setStatus('Failed to read file.', 'error');
+                };
+                reader.readAsText(file, 'utf8');
+            });
+
+            btnFetch.addEventListener('click', function() {
+                setStatus('Fetching 12409399.txt...', 'running');
+                fetch('12409399.txt')
+                    .then(function(r) {
+                        if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
+                        return r.text();
+                    })
+                    .then(function(code) {
+                        runWithInterception(code);
+                    })
+                    .catch(function(err) {
+                        setStatus('Could not load 12409399.txt. ' + err.message + ' Place the file in the same folder as this HTML, or use "Load script from file".', 'error');
+                    });
+            });
+        })();
+    </script>
+</body>
+</html>
