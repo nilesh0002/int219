@@ -21,7 +21,12 @@ but we can change the value of const but we cannot reassign the value of const
 syncronous and asyncronous:-
 syncronous:- it will execute the code line by line,it will wait for the previous code to execute before executing the next code
 asyncronous:- it will execute the code in any order,it will not wait for the previous code to execute
+
 promise:- it is used to handle asyncronous code
+ex:- promise has resolve and reject  resolve use for success and reject use for failure
+asyncroous means:- it will execute the code in any order
+so resolve with take time to execute and reject with take time to execute
+
 it has three states:- loading, fulfilled, rejected
 
 loading:- it is the initial state of the promise
@@ -32,8 +37,26 @@ it give 1st preference to the promise to be resolved before executing the next c
 
 fetch:- it is used to make an API call
 
-settimeout:- it is used to execute a function after a certain time
-setinterval:- it is used to execute a function repeatedly after a certain time
+set timeout:- it is used to execute a function after a certain time
+set interval:- it is used to execute a function repeatedly after a certain time
 defer:- it is used to execute a function after the HTML document is completely loaded
+
+24feb...
+useing all concept of unit 1 and 2
+template literals:-create a string with dynamic values using backtickes(``) and ${}
+example:- my name is ${name} and my age is ${age} 
+
+marks and ...marks:-
+marks:- it is used to store the remaining parameters in an array
+...marks:- called as spread operator and it is used to spread the elements of an array or an object
+destructuring:- it is used to extract values from an array or an object and assign them to variables
+example:- let marks=[10,20,30]
+let [m1,m2,m3]=marks
+=>m1=10,m2=20,m3=30
+
+spread operator:- it is used to spread the elements of an array or an object
+example:- let marks=[10,20,30]  ...marks => 10,20,30
+
+
 */
 
