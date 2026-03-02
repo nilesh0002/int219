@@ -57,6 +57,12 @@ let [m1,m2,m3]=marks
 linear-gradient() → creates smooth transition between colors in a direction.
 radial-gradient() → creates circular gradient from center outward.
 
+grid-template-columns: repeat(3,1fr); fr are unit accupied by collomn
+                      3 time fr = 3 coloms or we can write--1fr 1fr 1fr-fraction
+.source{}:- help us to link which image we want to use in our html file
+
+
+
 
 spread operator:- it is used to spread the elements of an array or an object
 example:- let marks=[10,20,30]  ...marks => 10,20,30
