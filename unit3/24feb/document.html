@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class product{
+            constructor(name,price,category){
+                this.name=name
+                this.price=price
+                this.category=category
+            }
+
+            displayproduct(){
+                console.log(`product Name: ${this.name}`)
+                console.log(`product Price: ${this.price}`)
+                console.log(`product Category: ${this.category}`)
+            }
+        }
+        const laptop=new product("laptop",45000,"electronics")
+        const mobile=new product("mobile",5000,"electronics")   
+        const tablet=new product("tablet",10000,"electronics")
+        laptop.displayproduct()
+        mobile.displayproduct() 
+        tablet.displayproduct()
+
+        const calculateTotal=(...prices)=>{
+            const total=prices.reduce((sum,price)=>sum+price,0)
+            return total
+        }   
+        const totalAmount=calculateTotal(laptop.price,mobile.price,tablet.price)
+        console.log(`Total Amount: ${totalAmount}`)
+        const processPayment=(total)=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(total>0){resolve(`payment successful: total amount ${total} is paid`)}
+                    else{reject(`Payment failed: total amount ${total} is zero`)}
+                },2000)
+            })
+        }
+        const showPaymentResult=async(total)=>{
+            try{
+                const result=await processPayment(total)
+                console.log(result)
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        const main=()=>{
+            const product1 =new product("laptop",4500,"electronics")
+            const product2 =new product("mobile",5000,"electronics")
+            const product3 =new product("tablet",10000,"electronics")
+            product1.displayproduct()
+            console.log()
+            product2.displayproduct()
+            console.log()
+            product3.displayproduct()
+            console.log()
+            
+            let prices=[product1.price,product2.price,product3.price]
+            const totalAmount=calculateTotal(...prices)
+            console.log(`Total Amount: ${totalAmount}`)
+
+            //destructuring of arrays
+            let [p1,p2,p3]=prices 
+            console.log(`Product Details: `)
+            console.log(`Product 1 Price: ${p1}`)
+            console.log(`Product 2 Price: ${p2}`)   
+            console.log(`Product 3 Price: ${p3}`)
+            //
+            let updatedPrices=[...prices,2000]
+            console.log(`Updated Prices: ${updatedPrices}`)
+            showPaymentResult(totalAmount)
+
+            const totalAmountWithDiscount=calculateTotal(...updatedPrices)
+            console.log(`Total Amount with Discount: ${totalAmount}`)
+        }
+        main()
+
+    </script>
+</body>
+</html>

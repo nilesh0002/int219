@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping cart</title>
+</head>
+<body>
+    <script>
+        class Product{
+            constructor(name,price,category="machines"){
+                this.name=name
+                this.price=price
+                this.category=category
+            }
+            displayInfo(){
+                console.log(`Name: ${this.name}`)
+                console.log(`Price: ${this.price}`)
+                console.log(`Category: ${this.category}`)
+            }
+        }
+        //arrow function:- ()=>{}
+        //laptop = 0 index - sum=index and price=4500
+        //mobile = 1 index - sum=index and price=5000
+        //tablet = 2 index - sum=index and price=10000
+        const calculateTotal=(...prices)=>{
+            const total=prices.reduce((sum,price)=>sum+price,0)
+            return total
+        }
+
+        //promise:-
+        const processPayment=(total)=>{
+            return new Promise((resolve,reject)=>{//it is object which has two parameters resolve and reject
+                setTimeout(()=>{
+                    if(total>0){resolve(`payment successful: total amount ${total} is paid`)}
+                    else{reject(`Payment failed: total amount ${total} is zero`)}
+                },2000)
+            })
+        }
+
+    </script>
+</body>
+</html>
