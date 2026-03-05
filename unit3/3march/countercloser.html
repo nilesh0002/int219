@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter using Closures</h1>
+
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>    
+    <button onclick="reset()">Reset</button>
+    <p id="output">counter: 0</p>
+    <Script>
+        //outer function
+        function counter(){
+            let count=0;
+            return {
+                increment:function(){
+                    count++;
+                    document.getElementById("output").innerHTML="counter: " + count;
+                },
+                decrement:function(){
+                    count--;
+                    document.getElementById("output").innerHTML="counter: " + count;
+                },
+                reset:function(){
+                    count=0;
+                    document.getElementById("output").innerHTML="counter: " + count;
+                }
+            };
+        }
+        const counter1=counter();
+        //access closure function
+        function increment(){
+            counter1.increment();
+        }
+        function decrement(){
+            counter1.decrement();
+        }
+        function reset(){
+            counter1.reset();
+        }
+    </Script>
+
+    
+</body>
+</html>

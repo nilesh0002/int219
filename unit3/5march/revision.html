@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice layout</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: rgb(169, 154, 157);
+            color: white;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        header img{
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+        }
+        marquee{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav{
+            background: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a{
+            gap:10px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        nav a:hover{
+            color: rgb(255, 0, 0);
+            transform: scale(1.1);
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .sidebar{
+            width: 25%;
+            background: #d6e8f0;
+            padding: 20px;
+            margin: 20px;
+            min-height: 350px;
+            /*apply animation*/
+            animation: moverbar 2s ease-in-out infinite, colorMove 2s ease-in-out infinite alternate;
+        }
+        .sidebar h3{
+            margin-bottom: 10px;
+        }
+        .content{  
+            width: 70%;
+            padding: 20px;
+            margin: 20px;
+        }
+        .big-box{
+            display: flex;
+            flex-direction: column; /* vertical stacking */
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        .box{
+            border: 2px solid black;
+            padding: 20px;
+            background: lightgray;
+            transition: 20.5s;
+            text-align: center;
+            /* apply transition for smooth animation */
+            transition: moverbar 2s ease-in-out infinite, colorMove 2s ease-in-out infinite alternate;
+             /* Apply the animation */
+
+
+        }
+        .box:hover{
+            transform: scale(1.05); /* zoom in slightly */
+            background-color: #610404;
+            color: white;
+        }
+        @keyframes moverbar{
+            from{translate: translateY(0);}
+            to{translate: translateY(20px);}
+        }
+        @keyframes colorMove{
+            from{background-color: #d6e8f0;}
+            to{background-color: #610404;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <img src="/unit1/image/lpu.png" alt="LPU LOGO">
+       <marquee>Lovely Professional University</marquee>
+    </header>
+    <nav>
+        <a href="#"><i class="fa-sharp fa-solid fa-home"></i> Home</a>
+        <a href="#"><i class="fa-sharp fa-solid fa-info-circle"></i> About us</a>
+        <a href="#"><i class="fa-sharp fa-solid fa-phone"></i> Contact us</a>
+    </nav>
+    <div class="main">
+        <!-- Sidebar on the left -->
+        <div class="sidebar">
+            <h3>Slider Content </h3>
+            <p>Slider Content </p>
+            <p>Slider Content </p>
+            <p>Slider Content </p>
+            <p>Slider Content </p>
+        </div>
+
+        <!-- Main content in the center -->
+        <div class="content">
+            <h1>Main content</h1>
+            <div class="big-box">
+                <div class="box">Box 1</div>    
+                <div class="box">Box 2</div>
+                <div class="box">Box 3</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

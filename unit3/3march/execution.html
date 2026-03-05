@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+<body>
+    <h2>global execution context</h2>
+    <p id="output1"></p>
+    <p id="output2"></p>
+
+    <script>
+        //global execution context
+        let studentname="nilesh";
+
+        //another global variable
+        let uni="lpu";
+
+        function display(){
+            //local execution context
+            // let studentname="john";
+            document.getElementById("output1").innerHTML=" Student name: " + studentname;
+        }
+
+        //another function 
+        function showuni(){
+            // let university="MIT";
+            document.getElementById("output2").innerHTML=" University: " + uni;
+        }
+        display();
+        showuni();
+
+        //accessing global variables directly
+        console.log(studentname);
+        console.log(uni);
+    </script>
+    
+</body>
+</html>

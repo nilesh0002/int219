@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function execution context</title>
+</head>
+<body>
+    <h2>function execution context</h2>
+
+    <p id="output"></p>
+    <p id="output1"></p>
+
+    <script>
+        //global variable
+        let uni="lpu";
+        function display(){
+            //local variable
+            let studentname="nilesh";
+            document.getElementById("output").innerHTML=" Student name: " + studentname;
+
+            document.getElementById("output1").innerHTML=" University: " + uni;
+
+            console.log("inside function: ");
+            console.log(studentname);
+            console.log(uni);
+        }
+        display();
+        
+
+         //accessing global variable directly
+         console.log(uni);
+    </script>
+    
+</body>
+</html>

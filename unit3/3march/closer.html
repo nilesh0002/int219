@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="closure()">click me</button>
+    <p id="output"></p>
+    <script>
+        //outer function
+        function outer(){
+            let name="nilesh";
+
+            function inner(){
+                return "student name: " + name;
+            }
+            return inner;
+        }
+        //calling of outer function
+
+        const result = outer();
+        function closure() {
+            document.getElementById("output").innerHTML = result();
+            console.log(result());
+        }
+        
+    </script>
+</body>
+</html>

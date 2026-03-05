@@ -1,0 +1,42 @@
+<!--
+
+to display product details name,price,catego use scope chain concept and function execution context concept
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>product details</h2>
+
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <script>
+        let productname="laptop";
+        function outter(){
+            let price=50000;
+            function inner(){
+                let category="electronics";
+                document.getElementById("output1").innerHTML=" Product name: " + productname;
+                document.getElementById("output2").innerHTML=" Price: " + price;
+                document.getElementById("output3").innerHTML=" Category: " + category;
+
+                console.log("inside inner function: ");
+                console.log(productname);
+                console.log(price);
+                console.log(category);
+            }
+            inner();
+        }
+        outter();
+     
+    </script>
+</body>
+</html>

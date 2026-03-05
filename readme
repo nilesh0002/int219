@@ -72,5 +72,29 @@ used as import and export:-
 types of module:- 
 es6 module:- it is the standard module system in JavaScript, it uses export and import keywords to export and import modules
 commonjs module:- it is the module system used in Node.js, it uses module.exports and 
+
+execution context:- provide environment for code to execute.
+type:
+global :-1.) it is by default 
+local:- 1.) it is created when a function is called
+        2.) it is destroyed when the function returns
+lexical:- 1.) it is created when a function is defined
+             2.) it is destroyed when the function is 
+             
+closure:- it is a function that has access to the variables in its outer scope, even after the outer function has returned
+json object:- name_value:n
+
+
+marque:-use for scrolling text or image in a web page
+fontawesome:- it is a library of icons and social logos that can be used in web development
+have to use <link href=""> for library
+
+element selector:- with the name of the element
+id selector:- with the id of the element
+class selector:- with the class of the element
+
+transitiion:- when mouse hover property will change
+scale:- change the size of the element (x and y axis)
 */
+
 
