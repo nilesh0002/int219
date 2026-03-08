@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- CONCEPT 1: HTML Structure -->
+<!-- Every HTML page needs: DOCTYPE, html, head, body -->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- CONCEPT 2: Semantic Tags -->
+  <!-- Use tags that describe their PURPOSE, not just looks -->
+  <!-- <header> = top section, <main> = main content, <footer> = bottom -->
+
+  <header>
+    <h1>📝 To-Do List</h1>
+    <p>INT219 — Unit 1 & 2 Project</p>
+  </header>
+
+  <main>
+
+    <!-- CONCEPT 3: Forms -->
+    <!-- <form> groups inputs together -->
+    <!-- <label> describes an input (for= must match input id=) -->
+    <!-- <input> collects user text -->
+    <!-- <button type="button"> does NOT submit/refresh the page -->
+
+    <section id="add-task-section">
+      <h2>Add a Task</h2>
+
+      <form id="task-form">
+        <label for="task-input">Task Name:</label>
+        <input type="text" id="task-input" placeholder="e.g. Study CSS..." />
+
+        <label for="category-input">Category:</label>
+        <input type="text" id="category-input" placeholder="e.g. Study, Home..." />
+
+        <button type="button" id="add-btn">Add Task</button>
+      </form>
+
+    </section>
+
+    <!-- This empty <ul> will be filled by JavaScript -->
+    <section id="task-list-section">
+      <h2>My Tasks</h2>
+      <ul id="task-list"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built for INT219 — Web Technologies</p>
+  </footer>
+
+  <!-- Script goes at the BOTTOM so HTML loads first -->
+  <script src="script.js"></script>
+
+</body>
+</html>

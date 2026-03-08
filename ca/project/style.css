@@ -1,0 +1,192 @@
+/* ============================================
+   INT219 — style.css
+   Covers: Selectors, Box Model, Flexbox
+   ============================================ */
+
+
+/* --- CONCEPT 4: CSS Selectors --- */
+/* Element selector  → targets all <p> tags         */
+/* Class selector    → .class-name (dot prefix)     */
+/* ID selector       → #id-name   (hash prefix)     */
+
+/* Universal reset — removes browser default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes box model predictable */
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f4f1eb;
+  color: #2d2d2d;
+  padding: 20px;
+}
+
+
+/* --- CONCEPT 5: Box Model --- */
+/* Every element is a box with 4 layers:            */
+/*  Content → Padding → Border → Margin            */
+/*                                                  */
+/*  ┌──────────── Margin ─────────────┐            */
+/*  │  ┌───────── Border ──────────┐  │            */
+/*  │  │  ┌────── Padding ──────┐  │  │            */
+/*  │  │  │      Content        │  │  │            */
+/*  │  │  └─────────────────────┘  │  │            */
+/*  │  └───────────────────────────┘  │            */
+/*  └─────────────────────────────────┘            */
+
+header {
+  background-color: #3a3a6e;
+  color: white;
+  padding: 20px;        /* Space INSIDE the box */
+  margin-bottom: 24px;  /* Space OUTSIDE the box */
+  border-radius: 8px;
+  border-left: 6px solid #f0a500; /* Border layer */
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+
+/* --- CONCEPT 6: Flexbox --- */
+/* Flexbox arranges children in a row or column     */
+/* Parent gets display:flex, children arrange auto  */
+
+main {
+  display: flex;          /* Turn on Flexbox */
+  flex-direction: row;    /* Arrange children LEFT → RIGHT */
+  gap: 24px;              /* Space between flex children */
+  align-items: flex-start;
+}
+
+/* On small screens, stack vertically instead */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+/* --- Sections (flex children) --- */
+#add-task-section,
+#task-list-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  flex: 1; /* Each section takes equal space */
+}
+
+#add-task-section h2,
+#task-list-section h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #3a3a6e;
+  border-bottom: 2px solid #f0a500;
+  padding-bottom: 6px;
+}
+
+
+/* --- Form Inputs (Box Model demo) --- */
+form {
+  display: flex;
+  flex-direction: column; /* Stack inputs VERTICALLY */
+  gap: 10px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  padding: 8px 12px;      /* Content gets breathing room */
+  border: 1px solid #ccc; /* Border layer */
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;            /* Fill available width */
+}
+
+input:focus {
+  outline: none;
+  border-color: #3a3a6e;  /* Pseudo-class selector (:focus) */
+}
+
+button {
+  padding: 10px;
+  background-color: #3a3a6e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+button:hover {
+  background-color: #f0a500; /* Pseudo-class selector (:hover) */
+  color: #2d2d2d;
+}
+
+
+/* --- Task List Items --- */
+ul {
+  list-style: none; /* Remove bullet points */
+}
+
+/* Class selector — added by JavaScript */
+.task-item {
+  display: flex;
+  justify-content: space-between; /* Push content to edges */
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.task-item span {
+  font-size: 14px;
+}
+
+.task-category {
+  font-size: 11px;
+  background: #e8e4f8;
+  color: #3a3a6e;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+  color: white;
+}
+
+/* .done class — toggled by JavaScript */
+.done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #999;
+}
