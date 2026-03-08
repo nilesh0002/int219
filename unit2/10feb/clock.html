@@ -15,6 +15,7 @@
 </style>
 <body>
     <h2 id="clock"></h2>
+    <h2 id="date"></h2>
     <script>
         function updateclock(){
             let now=new Date()
@@ -26,10 +27,11 @@
         function updatedate(){
             let now=new Date()
             let dateString=now.toLocaleDateString()
-            document.getElementById("clock").innerHTML=dateString
+            document.getElementById("date").innerHTML=dateString
         }
         updatedate() 
         setInterval(updatedate,1000)  
+
         
     </script>
 </body>

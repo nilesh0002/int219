@@ -25,6 +25,13 @@ setinterval- seting up an interval
             index=(index+1)%images.length
         }
         setInterval(changeimage,2000)
+        
+        images.forEach(function(image){
+            let img=document.createElement("side")
+            img.src=image
+            document.body.appendChild(img)
+        })
+
 
     
     </script>
