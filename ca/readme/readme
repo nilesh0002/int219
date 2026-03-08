@@ -1,0 +1,17 @@
+<!--
+
+ ============================================
+    HEADER: Site branding + top navigation
+    The <header> tag represents introductory content
+===============================================
+
+============================================
+    MAIN: The primary content of the page
+    Only ONE <main> per page — this is the rule
+=============================================== 
+<section> groups related content with a theme
+action="#" means "don't navigate away"
+The novalidate attribute is a boolean HTML5
+<aside> = content tangentially related to main content
+<dl> = Description List: pairs of terms and descriptions
+-->
