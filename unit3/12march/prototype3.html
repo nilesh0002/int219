@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Exam Results</h2>
+    <button onclick="showchocolate()">Make chocolate</button>
+    <p id="result"></p>
+
+    <script>
+        let factory ={
+            makeChocolate: function(){
+                return "Chocolate is ready!";
+            }   
+        }
+        let shop = Object.create(factory);
+
+        function showchocolate() {
+            document.getElementById("result").innerHTML = shop.makeChocolate();
+            console.log(shop.makeChocolate());
+        }
+        
+
+    </script>
+
+</body>
+</html>

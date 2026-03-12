@@ -95,6 +95,12 @@ class selector:- with the class of the element
 
 transitiion:- when mouse hover property will change
 scale:- change the size of the element (x and y axis)
+
+
+
+clouser:- 
+prototype:- inherit property of parent class to child class
+chocolate 
 */
 
 

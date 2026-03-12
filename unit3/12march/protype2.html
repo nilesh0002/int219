@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <h2>Prototype</h2>
+    <p id="one"></p>
+
+    <script>
+        //constructor fun
+        function person(name){
+            this.name=name;
+        }
+
+        person.prototype.sayHello=function(){
+            return "Hello, I am " + this.name;
+        }
+
+        let p1=new person("Alice");
+        
+        //display the result
+        document.getElementById("one").innerHTML = p1.sayHello();
+
+
+
+    </script>
+</body>
+</html>

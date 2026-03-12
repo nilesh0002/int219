@@ -16,6 +16,8 @@
     <script>
         document.getElementById("colorselect").onchange=function(){
             document.getElementById("selectcolor").innerText=this.value
+            document.getElementById("selectcolor").style.color=this.value
+            document.body.style.backgroundColor=this.value
         }
     </script>
 </body>
