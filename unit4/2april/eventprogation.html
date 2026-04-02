@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event propagation</title>
+
+</head>
+<style>
+    #parent{
+        padding: 20px;
+        background-color: lightblue;
+    }
+    #child{
+        padding: 10px;
+        background-color: lightgreen;
+    }
+</style>
+<body>
+    <h2>Event Propagation</h2>
+    <div id="parent">
+        <button id="child">Click Me</button>
+    </div>
+    <h2>Event Delegation</h2>
+    <ul id="list">
+        <li>student 1</li>
+        <li>student 2</li>
+        <li>student 3</li>
+    </ul>
+
+    <script>
+        document.getElementById("parent").addEventListener("click", function() {
+            console.log("Parent clicked!");
+        });
+    document.getElementById("child").addEventListener("click", function(event) {
+        console.log("Child clicked!");
+       
+    });
+
+    //event delegation
+    document.getElementById("list").addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            console.log("Clicked on: " + event.target.textContent);
+        }
+    });
+    </script>
+</body>
+</html>

@@ -111,4 +111,7 @@ for additon and deletion of element in html we use DOM
 random function:- it is used to generate a random any thing
 query selector:- select the 1st element
 
+which alert execute first:- sequence is first child then parent then grand parent
+
+
 
