@@ -100,7 +100,15 @@ scale:- change the size of the element (x and y axis)
 
 clouser:- 
 prototype:- inherit property of parent class to child class
-chocolate 
-*/
+prototype chain:- 
+
+
+
+
+DOM:- document object model
+for additon and deletion of element in html we use DOM
+
+random function:- it is used to generate a random any thing
+query selector:- select the 1st element
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>student list</h2>
+    <ul id="studentList">
+        <li>John</li>
+        <li>Jane</li>
+        <li>Doe</li>
+    </ul>
+    <input type="text" id="newStudent" placeholder="Enter student name">
+    <br><br>
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="removeStudent()">Remove Student</button>
+    <script>
+        function addStudent() {
+            let li=document.createElement("li");
+            li.innerHTML=document.getElementById("newStudent").value;
+            document.getElementById("studentList").appendChild(li);
+        }
+        function removeStudent() {
+            let list=document.getElementById("studentList");
+            list.removeChild(list.lastElementChild);
+        }
+
+    </script>
+   
+</body>
+</html>

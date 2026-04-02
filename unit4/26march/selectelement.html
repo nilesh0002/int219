@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="demo">First paragraph</p>
+    <p class="demo">Second paragraph</p>
+    
+
+    <button onclick="changeClass()">Change Class</button>
+    <script>
+        function changeClass(){
+            let item = document.getElementsByClassName("demo");
+            item[0].style.color="blue";
+            item[1].style.color="red";  
+           
+        }
+    </script>  
+</body>
+</html>
+<!--
+we cnat give same id to multiple but we can give same class to multiple.
+-->

@@ -14,7 +14,7 @@
 			"com.tldraw.pointer": 1,
 			"com.tldraw.shape": 4,
 			"com.tldraw.asset.bookmark": 2,
-			"com.tldraw.asset.image": 5,
+			"com.tldraw.asset.image": 6,
 			"com.tldraw.asset.video": 5,
 			"com.tldraw.shape.group": 0,
 			"com.tldraw.shape.text": 4,
@@ -58,6 +58,55 @@
 			"meta": {},
 			"id": "pointer:pointer",
 			"typeName": "pointer"
+		},
+		{
+			"x": 266.7649710944752,
+			"y": 749.2866681367574,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:JCvm4J47ZjfTwffRYhHNr",
+			"type": "geo",
+			"props": {
+				"w": 254.54296033316865,
+				"h": 76.82153281230171,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Bus"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aA31ME4V",
+			"typeName": "shape"
 		},
 		{
 			"x": 132.10581827607754,
@@ -109,9 +158,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 117.5138166439798,
-			"y": 232.41412267660473,
-			"z": 0.4559182972682278,
+			"x": 155.68814029739065,
+			"y": -263.1324844641259,
+			"z": 0.5814342687233791,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -184,12 +233,12 @@
 			"typeName": "binding"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:kF7vg0DjiDbJoXjVWs2Ha",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:iKHq_F1VxQ3YcMWwQH5_N"
+				"shape:kF7vg0DjiDbJoXjVWs2Ha"
 			],
-			"hoveredShapeId": "shape:iKHq_F1VxQ3YcMWwQH5_N",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -290,6 +339,104 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 338.4921815029023,
+			"y": 943.0603194262266,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kF7vg0DjiDbJoXjVWs2Ha",
+			"type": "geo",
+			"props": {
+				"w": 474.68822332401714,
+				"h": 75.67509161326655,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Ola uber rapido"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aBWptdzl",
+			"typeName": "shape"
+		},
+		{
+			"x": 645.459003549413,
+			"y": 745.8469508892462,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:DH0qVQgQAic_KILyvKKL_",
+			"type": "geo",
+			"props": {
+				"w": 254.54296033316865,
+				"h": 76.82153281230171,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "FLight"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a9Rpgb7V",
+			"typeName": "shape"
+		},
+		{
 			"x": 613.9989554485953,
 			"y": 293.54974662040394,
 			"rotation": 0,
@@ -350,7 +497,9 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
+			"stylesForNextShape": {
+				"tldraw:geo": "rectangle"
+			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -364,8 +513,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 752.22216796875,
-				"h": 484.9999694824219
+				"w": 1002,
+				"h": 605.3333740234375
 			},
 			"insets": [
 				false,
@@ -380,7 +529,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.8000000715255737,
+			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -492,6 +641,43 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 205.4876817969702,
+			"y": 524.5549842657585,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:T1pXSUo9K8xrbLn1-TuJ5",
+			"type": "geo",
+			"props": {
+				"w": 791.147038873362,
+				"h": 613.4256638392158,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a78cym5V",
+			"typeName": "shape"
+		},
+		{
 			"x": 498.44438136265774,
 			"y": 113.0675610925511,
 			"rotation": 0,
@@ -538,6 +724,55 @@
 			},
 			"parentId": "page:page",
 			"index": "a4EMThAV",
+			"typeName": "shape"
+		},
+		{
+			"x": 479.52274060641474,
+			"y": 589.910635459527,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Y64eum2LYvCyIla6KVBxD",
+			"type": "geo",
+			"props": {
+				"w": 254.54296033316865,
+				"h": 76.82153281230171,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Train"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a8y7AzQl",
 			"typeName": "shape"
 		}
 	]

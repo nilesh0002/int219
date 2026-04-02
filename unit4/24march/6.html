@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #colorBox{
+        
+      width: 200px;
+      height: 200px;
+      background-color: #ded5d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto;
+    }
+    button{
+       padding: 10px 20px;
+       font-size: 20px;
+    }
+</style>
+<body>
+    <h1>change background color</h1>
+    <div id="colorBox"></div>
+    <br><br>
+    <button id="changecolorbtn">Change Color</button>
+    <script>
+        //acces the button and div
+
+       let button=document.getElementById("changecolorbtn");
+       let colorBox=document.getElementById("colorBox");
+
+       //array to store the values of color
+       let colors=["red","blue","green","yellow","pink","orange"];
+        button.addEventListener("click",function(){
+                let randomIndex=Math.floor(Math.random()*colors.length);
+                colorBox.style.backgroundColor=colors[randomIndex];
+                colorBox.innerHTML=colors[randomIndex];
+            }); 
+
+    </script>
+</body>
+</html>

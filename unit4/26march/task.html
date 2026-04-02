@@ -1,0 +1,87 @@
+<!--
+design a webpage with include contact us form for a coleg event
+->create a label and input type
+->when user will enter a data in input type ,it should be displayed as list
+->place an image at the center,apply toggle to show and hide the image
+->write a pra with class "mypara" and show dom manipulation thorugh js function. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- CSS -->
+</head>
+<body>
+	<h1>College Event Contact Us</h1>
+
+	<form>
+		<label for="nameInput">Name</label>
+		<input type="text" id="nameInput">
+
+		<label for="emailInput">Email</label>
+		<input type="email" id="emailInput">
+
+		<label for="messageInput">Message</label>
+		<input type="text" id="messageInput">
+
+		<button type="button" onclick="addData()">Add to List</button>
+	</form>
+
+	<h3>Submitted Entries</h3>
+	<ul id="entryList"></ul>
+
+	<div class="image-box" align="center">
+		<button id="toggleBtn" onclick="toggleImage()">Hide Image</button>
+		<div>
+			<img id="eventImage" src="/unit1/image/w19.jpg" alt="College event" width="160" height="120">
+		</div>
+	</div>
+
+	<p class="mypara">This is a paragraph with class mypara.</p>
+	<button onclick="manipulateParagraph()">Change Paragraph</button>
+
+	<script>
+		function addData() {
+			let name = document.getElementById("nameInput").value;
+			let email = document.getElementById("emailInput").value;
+			let message = document.getElementById("messageInput").value;
+			let list = document.getElementById("entryList");
+
+			if (name == "" || email == "" || message == "") {
+				alert("Please fill all fields");
+				return;
+			}
+
+			let item = document.createElement("li");
+			item.innerHTML = "Name: " + name + " , Email: " + email + " , Message: " + message;
+			list.appendChild(item);
+
+			document.getElementById("nameInput").value = "";
+			document.getElementById("emailInput").value = "";
+			document.getElementById("messageInput").value = "";
+		}
+
+		function toggleImage() {
+			let image = document.getElementById("eventImage");
+			let btn = document.getElementById("toggleBtn");
+			if (image.style.display === "none") {
+				image.style.display = "block";
+				btn.innerHTML = "Hide Image";
+			} else {
+				image.style.display = "none";
+				btn.innerHTML = "Show Image";
+			}
+		}
+
+		function manipulateParagraph() {
+			let para = document.querySelector(".mypara");
+			para.textContent = "Paragraph changed using DOM.";
+			para.style.color = "blue";
+			para.style.fontWeight = "bold";
+		}
+	</script>
+</body>
+</html>

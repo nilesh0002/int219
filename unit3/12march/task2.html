@@ -1,0 +1,41 @@
+<!--
+ram is good in reading
+ram is good in writing
+ram is good in singing
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>task</h1>
+    <button onclick="show()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        function Person(name, skill1, skill2, skill3) {
+            this.name = name;
+            this.skill1 = skill1;
+            this.skill2 = skill2;
+            this.skill3 = skill3;
+        }
+
+        Person.prototype.display = function () {
+            document.getElementById("output").innerHTML =
+                this.name + " is good in " + this.skill1 + "<br>" +
+                this.name + " is good in " + this.skill2 + "<br>" +
+                this.name + " is good in " + this.skill3;
+        }
+
+        let ram = new Person("ram", "reading", "writing", "singing");
+
+        function show() {
+            ram.display();
+        }
+    </script>
+</body>
+</html>

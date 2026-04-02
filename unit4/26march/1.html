@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM Manipulation</h1>
+    <div id="Box"></div>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="toggleBox()">Toggle Box</button>
+    <script>
+        function changeText(){
+           document.getElementById("Box").innerText="today is thursday";
+        }
+        function changeColor(){
+            document.getElementById("Box").style.backgroundColor="orange";
+        }
+        function toggleBox(){
+            let box=document.getElementById("Box");
+            if(box.style.display==="none"){ //not visible
+                box.style.display="block";//visible
+            }else{
+                box.style.display="none";//not visible
+            }
+
+        }
+    </script>
+
+</body>
+</html>

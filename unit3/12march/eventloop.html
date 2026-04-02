@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+</head>
+<body>
+    <h2>Restaurant Example</h2>
+    <button onclick="serveCustomer()">Start Serving</button>
+    <p id="output"></p>
+    <script>
+        function serveCustomer(){
+            let result = " "
+
+            // Customer 1 request
+            
+                result += "Customer 1 : serve water<br>"
+                console.log("Customer 1 : serve water")
+
+                // customer 2 request
+                setTimeout(function(){
+                    document.getElementById("output").innerHTML += "Customer 2 : serve Pasta<br>"
+                    console.log("Customer 2 : serve Pasta")
+                }, 3000)
+                // customer 3 request
+                result += "Customer 3 : serve Cold Drinks<br>"
+                console.log("Customer 3 : serve Cold Drinks")
+
+                document.getElementById("output").innerHTML = result
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!--
+ desing a web page with dom manipulation 
+ where- 1.)image should be removed from page on click of button 
+ 2.) new heading should be added on click of button
+ 3.)edit a paragraph with the help of button
+ 4.)change the styling of <h1> by changing bg color and color
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM Task</title>
+	<style>
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			gap: 12px;
+		}
+
+		button {
+			margin: 4px;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="mainHeading">DOM Manipulation Task</h1>
+
+	<p id="para">This is the original paragraph text.</p>
+
+	<img
+		id="taskImage"
+        src="/unit1/image/lpu.png"
+        alt="LPU Image"
+        width="200"
+	>
+
+	<div id="newHeadingContainer"></div>
+
+	<br>
+	<button onclick="removeImage()">Remove Image</button>
+	<button onclick="addHeading()">Add New Heading</button>
+	<button onclick="editParagraph()">Edit Paragraph</button>
+	<button onclick="changeH1Style()">Change H1 Style</button>
+    <button onclick="changeh1color()">Change Text</button>
+
+	<script>
+		function removeImage() {
+			const image = document.getElementById("taskImage");
+			if (image) {
+				image.remove();
+			}
+		}
+
+		function addHeading() {
+			const container = document.getElementById("newHeadingContainer");
+			container.innerHTML = "<h2>New heading added!</h2>";
+		}
+
+		function editParagraph() {
+			document.getElementById("para").innerHTML = "Paragraph text has been edited.";
+		}
+
+		function changeH1Style() {
+			const heading = document.getElementById("mainHeading");
+			heading.style.backgroundColor = "black";
+			heading.style.color = "white";
+			heading.style.padding = "8px";
+		}
+
+		function changeh1color() {
+			const heading = document.getElementById("mainHeading");
+			heading.style.color = "red";
+		}
+	</script>
+</body>
+</html>
+
+

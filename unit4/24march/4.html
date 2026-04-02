@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="removeme">remove me</p>
+    <button onclick="removeElement()">Remove paragraph</button>
+    <script>
+        function removeElement() {
+            let element = document.getElementById("removeme");
+            element.parentNode.removeChild(element);
+        }       
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>event loop</h1>
+    <button onclick="runcode()">Click</button>
+    <p id="output"></p>
+    <script>
+        function runcode(){
+            let result = " "
+            result += "task 1 <br>"
+            setTimeout(function(){
+                document.getElementById("output").innerHTML =
+                 "task 2 completed after 2 second <br>"
+            },2000)
+
+            result += "task 3 finished <br>"
+            document.getElementById("output").innerHTML = result;
+        }
+        
+    </script>
+
+</body>
+</html>

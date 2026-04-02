@@ -1,0 +1,37 @@
+<!--
+  result of first student :passed
+  result of second student : awaited--- visible after some seconf
+  result of third student : failed 
+  result of fourth student : calculaing please wait--- visibkle 4000 second
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+</head>
+<body>
+    <h2>Student Results</h2>
+    <button onclick="show()">Show Results</button>
+    <div id="output"></div>
+
+    <script>
+        function show() {
+            document.getElementById("output").innerHTML = "result of first student: passed";
+
+            setTimeout(function () {
+                document.getElementById("output").innerHTML += "<br>result of second student: awaited";
+            }, 2000);
+
+            document.getElementById("output").innerHTML += "<br>result of third student: failed";
+
+            setTimeout(function () {
+                document.getElementById("output").innerHTML += "<br>result of fourth student: calculating please wait...";
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

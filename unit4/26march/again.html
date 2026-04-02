@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"> this is a paragraph</p>
+    <button onclick="changetext()">Change Text</button>
+    <script>
+        function changetext() {
+           document.getElementById("demo").textContent="<b>This is a new paragraph.</b>";
+        }   
+    </script>
+</body>
+</html>
+
+<!--
+textContent:- change text not html
+innerHTML:- change text and html both
+-->
