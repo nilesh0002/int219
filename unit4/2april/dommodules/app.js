@@ -1,3 +1,10 @@
-export function getmessage() {
-    return "text changed on click of button";
+
+
+import { getmessage } from "./message.js";
+import { changeColor } from "./style.js";
+
+window.changetext = function() {
+    let element = document.getElementById("title");
+    element.innerText = getmessage();
+    element.style.color = changeColor();
 }
