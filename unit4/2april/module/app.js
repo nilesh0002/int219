@@ -1,5 +1,5 @@
 import {add, mul}  from './math.js';
-import{getuser} from 'user.js';
+import{getuser} from './user.js';
 
 console.log("user :",getuser());
 console.log("addition :",add(5,3));
