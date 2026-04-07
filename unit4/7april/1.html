@@ -30,11 +30,32 @@
         padding: 0%;
     }
     li{
+        display: flex;
+        align-items: center;
         background: rgb(108,105,105);
         margin: 10px 0;
         padding: 10px;
         justify-content: space-between;
 
+    }
+    .present{
+        background: green;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-right: 5px;
+    }    .absent{
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-right: 5px;
+    }
+    .delete{
+        background: gray;
+        color: white;
+        border: none;
+        padding: 5px 10px;
     }
 </style>
 <body>
@@ -54,7 +75,7 @@
         addbtn.addEventListener('click', function(){
            
         let name = input.value.trim();
-        if(name===" ") return;
+        if(name === "") return;
             let li = document.createElement('li')
             li.innerHTML = `
             <span>${name}</span>
@@ -67,6 +88,22 @@
             list.appendChild(li);
             input.value = '';
         });
+        //include event delegation for present, absent and delete buttons   
+        list.addEventListener('click', function(e){
+            let li = e.target.parentElement.parentElement;
+            if(e.target.classList.contains('present')){
+                li.style.backgroundColor = 'green';
+                li.classList.remove('absent');
+            }else if(e.target.classList.contains('absent')){
+                li.style.backgroundColor = 'red';
+                li.classList.add('absent');
+            }else if(e.target.classList.contains('delete')){
+                list.removeChild(li);
+                list.classList.remove('absent');
+            }
+           }    
+        );
+
     </script>
 </body>
 </html>
