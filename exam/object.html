@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Project</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+
+            button {
+                padding: 10px;
+            }
+
+            #result {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>javascript object examples</h1>
+        <button onclick="showobject()">Show Object</button>
+        <div id="result"></div>
+        <script>
+            function showobject() {
+                let text = `{ "name": "John", "age": 30, "city": "New York" }`;
+
+                //convert json to object
+                let person = JSON.parse(text);
+
+                document.getElementById("result").innerHTML =
+                    "Name:" + person.name + "<br>" +
+                    "Age:" + person.age + "<br>" +
+                    "City:" + person.city;
+            }
+        </script>
+    </body>
+</html>

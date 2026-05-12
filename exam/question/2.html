@@ -1,0 +1,43 @@
+<!--
+calculate the average of 3 subject in and display the result in a paragrapg chek it user user pass the exam 
+it user get above 40% pass the exam otherwise fail the exam and display the result in heading
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>result </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+
+            #result {
+                margin-top: 10px;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+<body>
+    <h2>Calculate Average</h2>
+    <p id="result"></p>
+    <script>
+        let math = 20;
+        let hindi = 40;
+        let english = 50;
+        let avg = (math + hindi + english) / 3;
+
+        let result = document.getElementById("result");
+
+        if (avg >= 40) {
+            result.innerHTML = "Average: " + avg.toFixed(2) + " - Pass";
+        }
+        else{
+            result.innerHTML = "Average: " + avg.toFixed(2) + " - Fail";
+        }
+
+
+    </script>
+</body>
+</html>

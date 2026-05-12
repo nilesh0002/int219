@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mouse Events</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        #box {
+            width: 300px;
+            height: 200px;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 15px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        id="box"
+        onmouseover="changeColor()"
+        onmouseout="originalColor()"
+    >
+        Hover Me
+    </div>
+
+    <script>
+        function changeColor() {
+            // access div
+            let box = document.getElementById("box");
+
+            // change styles
+            box.style.background = "orange";
+            box.style.color = "white";
+            box.style.transform = "scale(1.1)";
+        }
+
+        function originalColor() {
+            // access div
+            let box = document.getElementById("box");
+
+            // restore styles
+            box.style.background = "skyblue";
+            box.style.color = "black";
+            box.style.transform = "scale(1)";
+        }
+    </script>
+</body>
+
+</html>

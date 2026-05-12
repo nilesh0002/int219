@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Async Await Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f7fb;
+            color: #1f2937;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: min(100%, 520px);
+            background: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            font-size: 32px;
+            line-height: 1.2;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin-top: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2563eb;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Async Await Example</h1>
+
+        <button onclick="startTask()">
+            Start Task
+        </button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // promise function
+        function getData() {
+            return new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve("Data Loaded Successfully");
+                }, 2000);
+            });
+        }
+
+        // async function
+        async function startTask() {
+            // waiting message
+            document.getElementById("result")
+                .innerHTML = "Loading...";
+
+            // wait for promise
+            let result = await getData();
+
+            // display result
+            document.getElementById("result")
+                .innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

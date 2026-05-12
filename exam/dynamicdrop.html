@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Dropdown</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 20px;
+            }
+
+            button {
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            select {
+                padding: 10px;
+                width: 200px;
+            }
+
+            #result {
+                margin-top: 20px;
+                font-size: 25px;
+                color: blue;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dynamic Dropdown Menu</h1>
+
+        <button onclick="createDropdown()">
+            Create Dropdown
+        </button>
+
+        <br><br>
+
+        <div id="dropdownContainer"></div>
+        <div id="result"></div>
+
+        <script>
+            function createDropdown() {
+                // ask number
+                let count = prompt("How many options?");
+
+                count = Number(count);
+
+                // create select element
+                let select = document.createElement("select");
+
+                // onchange event
+                select.onchange = function () {
+                    document.getElementById("result").innerHTML =
+                        "Selected: " + this.value;
+                };
+
+                // loop
+                for (let i = 1; i <= count; i++) {
+                    // ask option
+                    let optionText = prompt("Enter option " + i);
+
+                    // create option
+                    let option = document.createElement("option");
+
+                    option.text = optionText;
+                    option.value = optionText;
+
+                    // add option
+                    select.appendChild(option);
+                }
+
+                // show dropdown
+                let container = document.getElementById("dropdownContainer");
+
+                container.innerHTML = "";
+                container.appendChild(select);
+            }
+        </script>
+    </body>
+</html>

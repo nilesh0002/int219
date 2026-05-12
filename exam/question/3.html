@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript DOM Manipulation</title>
+
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>e-commerce product page</h1>
+    <div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' rx='10' fill='%23e8eef7'/%3E%3Ctext x='75' y='82' text-anchor='middle' font-family='Arial' font-size='18' fill='%23555'%3EProduct 1%3C/text%3E%3C/svg%3E" alt="Product 1">
+        <h2>Product Name</h2>
+        <p>Price: $100</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <br><br>
+    <div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' rx='10' fill='%23f3eadf'/%3E%3Ctext x='75' y='82' text-anchor='middle' font-family='Arial' font-size='18' fill='%23555'%3EProduct 2%3C/text%3E%3C/svg%3E" alt="Product 2">
+        <h2>Product Name</h2>
+        <p>Price: $100</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <!--cart quantity display-->
+    <h2>Cart Quantity: <span id="cartQuantity">0</span></h2>
+    <script>
+        let cartQuantity = 0;
+
+        function addToCart() {
+            cartQuantity++;
+            document.getElementById("cartQuantity").innerText = cartQuantity;
+        }
+    </script>
+</body>
+</html>

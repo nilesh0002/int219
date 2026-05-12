@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Country Project</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 20px;
+            }
+
+            select {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            #capital {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Country Project</h1>
+
+        <!--Dropdown-->
+        <select id="country" onchange="showCapital()">
+            <option value="">Select a country</option>
+            <option value="new delhi">India</option>
+            <option value="washington d.c">Usa</option>
+            <option value="Tokyo">Japan</option>
+            <option value="beijing">China</option>
+            <option value="ottawa">Canada</option>
+        </select>
+        <h2>
+            capital:
+            <span id="capital"></span>
+        </h2>
+        <script>
+            function showCapital() {
+                let capital = document.getElementById("country").value;
+
+                //display capital
+                document.getElementById("capital").innerHTML = capital;
+            }
+        </script>
+    </body>
+</html>

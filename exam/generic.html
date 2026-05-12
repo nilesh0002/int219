@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>JavaScript Module Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            padding:30px;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:24px;
+            color:blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Module Example</h1>
+
+    <div id="result"></div>
+
+
+
+
+
+    <script type="module">
+        import { displayData, user } from "./generic-module.js";
+
+        const numberData = displayData(100);
+        const stringData = displayData("Frontend");
+
+        document.getElementById("result").innerHTML =
+            "Number: " + numberData + "<br><br>" +
+            "String: " + stringData + "<br><br>" +
+            "User Name: " + user.name + "<br>" +
+            "Email: " + user.email;
+    </script>
+
+</body>
+
+</html>

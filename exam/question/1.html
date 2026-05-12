@@ -1,0 +1,61 @@
+<!-- design a webpage which is responsive for getting the user input from the use in salary,throught
+ that input use varibale ,fucntion and if else statement to calculatte the sa;ary after
+ the bonus allocated to employee.if salary is greater then 50000 
+ give 30% bouns and if salary is less than or equal to 50000
+ give 10% bonus display the updated salary in heading along with amount of bonus-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript DOM Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Salary</h1>
+    <input type="number" id="salary" placeholder="Enter salary">
+    <button onclick="calculateBonus()">Calculate Bonus</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateBonus() {
+            let salary = Number(document.getElementById("salary").value);
+            
+            if (!salary || salary <= 0) {
+                alert("Please enter a valid salary amount");
+                return;
+            }
+
+            let bonus;
+            if (salary >= 50000) {
+                bonus = salary * 0.20;
+            } else {
+                bonus = salary * 0.10;
+            }
+            
+            let finalSalary = salary + bonus;
+
+            document.getElementById("result").innerHTML = 
+                "Bonus: " + bonus.toFixed(2) + "<br>" +
+                "Final Salary: " + finalSalary.toFixed(2);
+        }
+    </script>
+</body>
+</html>

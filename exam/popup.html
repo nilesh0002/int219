@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Popup Project</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+
+            button {
+                padding: 10px 20px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+            input {
+                padding: 8px;
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JavaScript Current Date</h1>
+
+        <!--QUESTION 1-->
+        <h2>1.Display the current date and time</h2>
+
+        <!--textboxes-->
+        <input type="text" id="date">
+
+        <!--Button-->
+        <button onclick="displayDate()">Display Date</button>
+
+        <!--QUESTION 2-->
+        <h2>2. find factorial</h2>
+
+        <button onclick="findfactorial()">Find Factorial</button>
+
+        <!--QUESTION 3-->
+        <h2>3. multiplication table</h2>
+        <button onclick="showtable()">Multiplication Table</button>
+
+        <script>
+            //QUESTION 1
+            function displayDate() {
+                let today = new Date(); //create current date..
+
+                document.getElementById("date").value = today; // put date inside textbox..
+            }
+
+            //QUESTION 2
+            function findfactorial() {
+                let num = prompt("enter a number"); //take input from user.
+                num = Number(num); //convert string to number.
+                let factorial = 1; // store factorial.
+
+                for (let i = 1; i <= num; i++) {
+                    factorial *= i;
+                }
+                alert("Factorial is: " + factorial);
+            }
+
+            //QUESTION 3
+            function showtable() {
+                let num = prompt("enter a number"); //take input from user.
+                num = Number(num); //convert string to number
+                let result = ""; //store result of table.
+
+                for (let i = 1; i <= 10; i++) {
+                    result += num + " x " + i + " = " + (num * i) + "\n";
+                }
+                alert(result); //display table
+            }
+        </script>
+    </body>
+</html>
