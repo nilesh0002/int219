@@ -1,1 +1,43 @@
 <!--chesss patern using css grid-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chess Pattern</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+            gap: 0;
+            width: fit-content;
+            margin: 20px;
+        }
+        
+        .div {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .div:nth-child(odd) {
+            background-color: #000;
+        }
+        
+        .div:nth-child(even) {
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div>
+        <div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div><div class="div"></div>
+        <div class=" div"></ div >< div class=" div "></ div >< div class=" div "></ div >< div class=" div "></ div >< div class=" div "></ div >< div class=" div "></ div >< div class=" div "></ div >< div class=" div "></ div >
+        <div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div>
+        <div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class=".div"></.div><<div class("-div").></-div>
+    </div>
+
+
+</body>
+</html>
