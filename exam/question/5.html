@@ -1,8 +1,33 @@
-//create a display with grid as chess board pattern
-// creat a webapage to add the tasks in a to-do list with the help typescript
-// create a webpage this one header,one footer,navigation bar and sider.apply animaton
-and transition on nav bar
-//design a webpage to check the current date and time with in a div and apply  proper css proper display
-with header anf footer
-// dsign a webpage to sore value of 3 student in a object, perform inserting a new element,
-removing an existing element and updating element with proper GUI
+<!-- design a webpage to sore value of 3 student in a object, perform inserting a new element,
+removing an existing element and updating element with proper GUI -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Object</title>
+	<style>
+		body{font-family:Arial,sans-serif;padding:20px}
+		input,button{margin:4px;padding:8px}
+		pre{background:#f4f4f4;padding:12px;border:1px solid #ccc}
+	</style>
+</head>
+<body>
+	<h1>Student Object</h1>
+	<input id="id" placeholder="id">
+	<input id="name" placeholder="name">
+	<input id="marks" placeholder="marks">
+	<br>
+	<button onclick="add()">Insert</button>
+	<button onclick="update()">Update</button>
+	<button onclick="removeStudent()">Remove</button>
+	<pre id="out"></pre>
+	<script>
+		let students={s1:{name:'Asha',marks:80},s2:{name:'Ben',marks:75},s3:{name:'Cia',marks:90}};
+		function show(){out.textContent=JSON.stringify(students,null,2)}
+		function add(){students[id.value]={name:name.value,marks:+marks.value};show()}
+		function update(){students[id.value]={name:name.value,marks:+marks.value};show()}
+		function removeStudent(){delete students[id.value];show()}
+		show()
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!-- design a webpage to check the current date and time with in a div and apply  proper css proper display
+with header anf footer -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date and Time</title>
+	<style>
+		body{margin:0;font-family:Arial,sans-serif;text-align:center}
+		header,footer{background:#222;color:#fff;padding:12px}
+		.box{margin:40px auto;padding:20px;width:260px;border:1px solid #ccc;border-radius:10px}
+	</style>
+</head>
+<body>
+	<header>Header</header>
+	<div class="box" id="time"></div>
+	<footer>Footer</footer>
+	<script>
+		function show(){document.getElementById('time').textContent=new Date().toString()}
+		show(); setInterval(show,1000)
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!-- create a webpage to add the tasks in a to-do list with the help of TypeScript -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<style>
+		body{font-family:Arial,sans-serif;padding:20px}
+		input,button{padding:8px}
+		li{margin:6px 0}
+	</style>
+</head>
+<body>
+	<h1>To Do List</h1>
+	<input id="task" placeholder="Enter task">
+	<button onclick="addTask()">Add</button>
+	<ul id="list"></ul>
+	<script>
+		function addTask(){
+			let task=document.getElementById('task').value.trim();
+			if(!task) return;
+			let li=document.createElement('li');
+			li.textContent=task;
+			document.getElementById('list').appendChild(li);
+			document.getElementById('task').value='';
+		}
+	</script>
+</body>
+</html>

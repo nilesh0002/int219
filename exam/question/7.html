@@ -1,0 +1,80 @@
+<!-- create a webpage this one header,one footer,navigation bar and sider.apply animaton
+and transition on nav bar -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			background: #eef2f7;
+		}
+
+		header,
+		footer {
+			background: #1f2937;
+			color: #fff;
+			text-align: center;
+			padding: 14px;
+		}
+
+		nav {
+			background: #fff;
+			padding: 12px;
+			display: flex;
+			gap: 12px;
+			justify-content: center;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		}
+
+		nav a {
+			text-decoration: none;
+			color: #1f2937;
+			padding: 6px 10px;
+			border-radius: 6px;
+			transition: 0.3s;
+		}
+
+		nav a:hover {
+			background: #1f2937;
+			color: #fff;
+		}
+
+		.box {
+			display: flex;
+			min-height: 70vh;
+		}
+
+		.side {
+			width: 180px;
+			background: #cbd5e1;
+			padding: 15px;
+			animation: move 1s ease;
+		}
+
+		.main {
+			flex: 1;
+			padding: 20px;
+		}
+
+		@keyframes move {
+			from { transform: translateX(-100%); }
+			to { transform: translateX(0); }
+		}
+	</style>
+</head>
+<body>
+	<header>Header</header>
+	<nav>
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Contact</a>
+	</nav>
+	<div class="box">
+		<aside class="side">Sidebar</aside>
+		<main class="main">Main Content</main>
+	</div>
+	<footer>Footer</footer>
+</body>
+</html>
