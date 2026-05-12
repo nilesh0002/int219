@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counter Project</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px;
+            }
+
+            textarea {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>counter project</h1>
+
+        <!--MULTIPLE INPUTS-->
+        <textarea
+            id="input"
+            rows="10"
+            cols="50"
+            placeholder="enter text"
+        ></textarea><br><br>
+
+        <button onclick="counttext()">Count</button><br><br>
+
+        <script>
+            function counttext() {
+                let text = document.getElementById("input").value;
+
+                //character count
+                let count = text.length;
+
+                //word count
+                let wordarray = text.trim().split(/\s+/);
+
+                let words = 0;
+
+                if (text.trim() == "") {
+                    words = 0;
+                } else {
+                    words = wordarray.length;
+                }
+
+                //line count
+                let line = text.split("\n").length;
+
+                //show results
+                alert(
+                    "character count: " + count + "\n" +
+                    "word count: " + words + "\n" +
+                    "line count: " + line
+                );
+            }
+        </script>
+    </body>
+</html>

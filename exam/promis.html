@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Promise</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f7fb;
+            color: #1f2937;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: min(100%, 520px);
+            background: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            font-size: 32px;
+            line-height: 1.2;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin-top: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2563eb;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Promise Example</h1>
+
+        <button onclick="checkPromise()">
+            Run Promise
+        </button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkPromise() {
+            // create promise
+            let myPromise = new Promise(function (resolve, reject) {
+                let success = true;
+
+                // async task
+                setTimeout(function () {
+                    if (success) {
+                        resolve("Promise Resolved Successfully");
+                    }
+                    else {
+                        reject("Promise Rejected");
+                    }
+                }, 2000);
+            });
+
+            // success handling
+            myPromise.then(function (message) {
+                document.getElementById("result")
+                    .innerHTML = message;
+            })
+
+                // error handling
+                .catch(function (error) {
+                    document.getElementById("result")
+                        .innerHTML = error;
+                });
+        }
+    </script>
+</body>
+
+</html>

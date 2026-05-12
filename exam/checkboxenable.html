@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enable Disable Button</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 30px;
+            }
+
+            button {
+                padding: 10px 20px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+            label {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Checkbox Validation</h1>
+
+        <label>
+            <input
+                type="checkbox"
+                id="agree"
+                onchange="toggleButton()"
+            >
+            I Agree Terms and Conditions
+        </label>
+
+        <br>
+
+        <button id="submitBtn" disabled>
+            Submit
+        </button>
+
+        <script>
+            function toggleButton() {
+                // access checkbox
+                let checkbox = document.getElementById("agree");
+
+                // access button
+                let button = document.getElementById("submitBtn");
+
+                // check checkbox status
+                if (checkbox.checked) {
+                    // enable button
+                    button.disabled = false;
+                } else {
+                    // disable button
+                    button.disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>

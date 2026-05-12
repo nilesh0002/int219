@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Bubbling</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        #parent {
+            background: lightblue;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 15px 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 25px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Bubbling and Delegation</h1>
+
+    <div id="parent">
+        Parent DIV
+        <br><br>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        // parent element
+        let parent = document.getElementById("parent");
+
+        // single event listener
+        parent.addEventListener("click", function(event) {
+            // clicked element
+            let clicked = event.target;
+
+            // check button clicked
+            if (clicked.tagName === "BUTTON") {
+                document.getElementById("result")
+                    .innerHTML =
+                    clicked.innerHTML +
+                    " Clicked";
+            }
+        });
+    </script>
+</body>
+
+</html>

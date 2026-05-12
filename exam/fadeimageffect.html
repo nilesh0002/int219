@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fade Image Effect</title>
+        <style>
+            body {
+                font-family: Arial;
+                text-align: center;
+                padding: 30px;
+            }
+
+            img {
+                width: 400px;
+                border-radius: 10px;
+                cursor: pointer;
+
+                /* smooth fade effect */
+                transition: opacity 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Click Image to Fade</h1>
+
+        <img
+            id="myImage"
+            src="https://picsum.photos/400/300"
+            onclick="fadeImage()"
+        >
+
+        <script>
+            function fadeImage() {
+                // access image
+                let image = document.getElementById("myImage");
+
+                // fade image
+                image.style.opacity = "0";
+            }
+        </script>
+    </body>
+</html>

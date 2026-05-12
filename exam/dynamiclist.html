@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic List Generator</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 20px;
+            }
+
+            button {
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            li {
+                padding: 10px;
+                margin: 5px;
+                background: #f0f0f0;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dynamic List Generator</h1>
+
+        <button onclick="generateList()">
+            Generate List
+        </button>
+
+        <div id="listContainer"></div>
+
+        <script>
+            function generateList() {
+                // ask number
+                let count = prompt("Enter number of items");
+
+                count = Number(count);
+
+                // create ordered list
+                let ol = document.createElement("ol");
+
+                // loop
+                for (let i = 1; i <= count; i++) {
+                    // ask item name
+                    let itemText = prompt("Enter item " + i);
+
+                    // create list item
+                    let li = document.createElement("li");
+                    li.innerHTML = itemText;
+
+                    // mouseover event
+                    li.onmouseover = function () {
+                        this.style.backgroundColor = "yellow";
+                        this.style.fontSize = "25px";
+                    };
+
+                    // mouseout event
+                    li.onmouseout = function () {
+                        this.style.backgroundColor = "#f0f0f0";
+                        this.style.fontSize = "16px";
+                    };
+
+                    // add item into list
+                    ol.appendChild(li);
+                }
+
+                // show list
+                let container = document.getElementById("listContainer");
+
+                container.innerHTML = "";
+                container.appendChild(ol);
+            }
+        </script>
+    </body>
+</html>

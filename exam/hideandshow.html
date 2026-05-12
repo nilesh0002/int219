@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show Hide Div</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 30px;
+            }
+
+            button {
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+
+            #box {
+                width: 300px;
+                padding: 20px;
+                background: lightblue;
+                border-radius: 10px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Show / Hide Div</h1>
+
+        <button onclick="toggleBox()">
+            Show / Hide
+        </button>
+
+        <div id="box">
+            This is a DIV element.
+        </div>
+
+        <script>
+            function toggleBox() {
+                // access div
+                let box = document.getElementById("box");
+
+                // check visibility
+                if (box.style.display === "none") {
+                    // show div
+                    box.style.display = "block";
+                } else {
+                    // hide div
+                    box.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>
